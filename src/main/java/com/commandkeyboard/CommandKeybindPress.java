@@ -36,9 +36,12 @@ public class CommandKeybindPress extends CommandBase {
 
     @Override
     public int getRequiredPermissionLevel() {
-        return 2;
+        return 0;
     }
-
+    @Override
+    public boolean checkPermission(MinecraftServer server, ICommandSender sender) {
+        return true; // <--- 这里强制通过
+    }
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
         if (args.length == 0) {
